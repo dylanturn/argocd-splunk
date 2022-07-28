@@ -1,0 +1,6 @@
+apiVersion: enterprise.splunk.com/v3
+kind: Standalone
+metadata:
+  name: simple-splunk
+  finalizers:
+  - enterprise.splunk.com/delete-pvc
