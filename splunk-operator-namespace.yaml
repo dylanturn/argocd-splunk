@@ -3,8 +3,8 @@ kind: Namespace
 metadata:
   labels:
     control-plane: controller-manager
-    name: splunk-operator
-  name: splunk-operator
+    name: splunk
+  name: splunk
 ---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
@@ -13968,7 +13968,7 @@ metadata:
   labels:
     name: splunk-operator
   name: splunk-operator-controller-manager
-  namespace: splunk-operator
+  namespace: splunk
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -13976,7 +13976,7 @@ metadata:
   labels:
     name: splunk-operator
   name: splunk-operator-leader-election-role
-  namespace: splunk-operator
+  namespace: splunk
 rules:
 - apiGroups:
   - ""
@@ -14017,7 +14017,7 @@ metadata:
   labels:
     name: splunk-operator
   name: splunk-operator-manager-role
-  namespace: splunk-operator
+  namespace: splunk
 rules:
 - apiGroups:
   - apiextensions.k8s.io
@@ -14353,7 +14353,7 @@ metadata:
   labels:
     name: splunk-operator
   name: splunk-operator-leader-election-rolebinding
-  namespace: splunk-operator
+  namespace: splunk
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -14361,7 +14361,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: splunk-operator-controller-manager
-  namespace: splunk-operator
+  namespace: splunk
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -14369,7 +14369,7 @@ metadata:
   labels:
     name: splunk-operator
   name: splunk-operator-manager-rolebinding
-  namespace: splunk-operator
+  namespace: splunk
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -14377,7 +14377,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: splunk-operator-controller-manager
-  namespace: splunk-operator
+  namespace: splunk
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -14392,7 +14392,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: splunk-operator-controller-manager
-  namespace: splunk-operator
+  namespace: splunk
 ---
 apiVersion: v1
 data:
@@ -14404,7 +14404,7 @@ metadata:
   labels:
     name: splunk-operator
   name: splunk-operator-config
-  namespace: splunk-operator
+  namespace: splunk
 ---
 apiVersion: v1
 data:
@@ -14425,7 +14425,7 @@ metadata:
   labels:
     name: splunk-operator
   name: splunk-operator-manager-config
-  namespace: splunk-operator
+  namespace: splunk
 ---
 apiVersion: v1
 kind: Service
@@ -14434,7 +14434,7 @@ metadata:
     control-plane: controller-manager
     name: splunk-operator
   name: splunk-operator-controller-manager-metrics-service
-  namespace: splunk-operator
+  namespace: splunk
 spec:
   ports:
   - name: https
@@ -14452,7 +14452,7 @@ metadata:
     control-plane: controller-manager
     name: splunk-operator
   name: splunk-operator-controller-manager-service
-  namespace: splunk-operator
+  namespace: splunk
 spec:
   ports:
   - name: metric
@@ -14473,7 +14473,7 @@ metadata:
   labels:
     name: splunk-operator
   name: splunk-operator-app-download
-  namespace: splunk-operator
+  namespace: splunk
 spec:
   accessModes:
   - ReadWriteOnce
@@ -14489,7 +14489,7 @@ metadata:
     control-plane: controller-manager
     name: splunk-operator
   name: splunk-operator-controller-manager
-  namespace: splunk-operator
+  namespace: splunk
 spec:
   replicas: 1
   selector:
