@@ -31,7 +31,22 @@ spec:
             name: splunk-simple-splunk-standalone-service
             port:
               number: 8000
+  - host: hec.splunk.arroyo.turnbros.app
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: splunk-simple-splunk-standalone-service
+            port:
+              number: 8088
+              
   tls:
-  - hosts:
+  - secretName: splunk-splunkweb-tls
+    hosts:
     - splunk.arroyo.turnbros.app
-    secretName: splunk-splunkweb-tls
+
+  - secretName: splunk-hec-splunkweb-tls
+    hosts:
+    - hec.splunk.arroyo.turnbros.app
