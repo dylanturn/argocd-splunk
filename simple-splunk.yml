@@ -26,19 +26,11 @@ spec:
         app.kubernetes.io/part-of: splunk-simple-splunk-standalone
     spec:
       ports:
-      - name: http-splunkweb
+      - name: http-web
         port: 8000
         protocol: TCP
-        targetPort: 8000
+        targetPort: 9000
       - name: http-hec
         port: 8088
         protocol: TCP
-        targetPort: 8088
-      - name: https-splunkd
-        port: 8089
-        protocol: TCP
-        targetPort: 8089
-      - name: tcp-s2s
-        port: 9997
-        protocol: TCP
-        targetPort: 9997
+        targetPort: 9088
