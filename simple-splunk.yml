@@ -14,9 +14,6 @@ spec:
   serviceTemplate:
     apiVersion: v1
     kind: Service
-    metadata:
-      annotations:
-        traefik.ingress.kubernetes.io/service.serversscheme: https
     spec:
       ports:
       - name: https
