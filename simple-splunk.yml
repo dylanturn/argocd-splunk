@@ -20,10 +20,12 @@ spec:
     spec:
       ports:
       - name: splunk-web
+        appProtocol: https
         port: 9000
         protocol: TCP
         targetPort: 8000
       - name: splunk-hec
+        appProtocol: https
         port: 9088
         protocol: TCP
         targetPort: 8088
