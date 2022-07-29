@@ -13,6 +13,7 @@ metadata:
 spec:
   serviceTemplate:
     metadata:
+      name: splunk-simple-splunk-standalone-service
       annotations:
         traefik.ingress.kubernetes.io/service.serversscheme: https
 
