@@ -14,18 +14,12 @@ spec:
   serviceTemplate:
     apiVersion: v1
     kind: Service
-#    metadata:
-#      annotations:
-#        traefik.ingress.kubernetes.io/service.serversscheme: https
+    metadata:
+      annotations:
+        traefik.ingress.kubernetes.io/service.serversscheme: https
     spec:
       ports:
-      - name: splunk-web
-        appProtocol: https
-        port: 9000
-        protocol: TCP
-        targetPort: 8000
-      - name: splunk-hec
-        appProtocol: https
-        port: 9088
+      - name: https
+        port: 443
         protocol: TCP
         targetPort: 8088
