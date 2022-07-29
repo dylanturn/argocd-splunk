@@ -2,5 +2,10 @@ apiVersion: enterprise.splunk.com/v3
 kind: Standalone
 metadata:
   name: simple-splunk
+  labels:
+    app.kubernetes.io/name: simple-splunk
+    app.kubernetes.io/version: 9.0.0
+    app.kubernetes.io/instance: simple-splunk
+    app.kubernetes.io/managed-by: ArgoCD
   finalizers:
   - enterprise.splunk.com/delete-pvc
