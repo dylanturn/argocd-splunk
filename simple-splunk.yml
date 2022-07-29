@@ -2,20 +2,13 @@
 apiVersion: enterprise.splunk.com/v3
 kind: Standalone
 metadata:
-  name: simple-splunk
+  name: sean
   labels:
-    app.kubernetes.io/name: simple-splunk
+    app.kubernetes.io/name: sean
     app.kubernetes.io/version: 9.0.0
-    app.kubernetes.io/instance: simple-splunk
+    app.kubernetes.io/instance: sean
     app.kubernetes.io/managed-by: ArgoCD
-  finalizers:
-  - enterprise.splunk.com/delete-pvc
 spec:
-  replicas: 1
-  resources:
-    requests:
-      memory: "12Gi"
-      cpu: "8"
   etcVolumeStorageConfig:
     storageClassName: kube-rook
     storageCapacity: 15Gi
