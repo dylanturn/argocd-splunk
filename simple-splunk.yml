@@ -27,10 +27,18 @@ spec:
     spec:
       ports:
       - name: http-web
-        port: 8000
+        port: 9000
         protocol: TCP
-        targetPort: 9000
+        targetPort: 8000
       - name: http-hec
-        port: 8088
+        port: 9088
         protocol: TCP
-        targetPort: 9088
+        targetPort: 8088
+#      - name: https-spd
+#        port: 8089
+#        protocol: TCP
+#        targetPort: 8089
+#      - name: tcp
+#        port: 9997
+#        protocol: TCP
+#        targetPort: 9997
