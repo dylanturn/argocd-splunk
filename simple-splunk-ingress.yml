@@ -56,7 +56,7 @@ spec:
           service:
             name: splunk-simple-splunk-standalone-service
             port:
-              number: 8088
+              number: 9088
   tls:
   - secretName: splunk-splunkhec-tls
     hosts:
