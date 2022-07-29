@@ -12,25 +12,18 @@ metadata:
   - enterprise.splunk.com/delete-pvc
 spec:
   serviceTemplate:
+    apiVersion: v1
+    kind: Service
     metadata:
       name: splunk-simple-splunk-standalone-service
       annotations:
         traefik.ingress.kubernetes.io/service.serversscheme: https
-
-
-#  serviceTemplate:
-#    apiVersion: v1
-#    kind: Service
-#    metadata:
-#      name: splunk-simple-splunk-standalone-service
-#      annotations:
-#        traefik.ingress.kubernetes.io/service.serversscheme: https
-#      labels:
-#        app.kubernetes.io/component: standalone
-#        app.kubernetes.io/instance: splunk-simple-splunk-standalone
-#        app.kubernetes.io/managed-by: splunk-operator
-#        app.kubernetes.io/name: standalone
-#        app.kubernetes.io/part-of: splunk-simple-splunk-standalone
+      labels:
+        app.kubernetes.io/component: standalone
+        app.kubernetes.io/instance: splunk-simple-splunk-standalone
+        app.kubernetes.io/managed-by: splunk-operator
+        app.kubernetes.io/name: standalone
+        app.kubernetes.io/part-of: splunk-simple-splunk-standalone
 #    spec:
 #      ports:
 #      - name: http-splunkweb
