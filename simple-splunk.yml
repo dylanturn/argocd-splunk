@@ -11,6 +11,17 @@ metadata:
   finalizers:
   - enterprise.splunk.com/delete-pvc
 spec:
+  replicas: 3
+  resources:
+    requests:
+      memory: "12Gi"
+      cpu: "8"
+  etcVolumeStorageConfig:
+    storageClassName: kube-rook
+    storageCapacity: 15Gi
+  varVolumeStorageConfig:
+    storageClassName: kube-rook
+    storageCapacity: 100Gi
   serviceTemplate:
     apiVersion: v1
     kind: Service
