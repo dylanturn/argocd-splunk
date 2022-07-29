@@ -1,3 +1,4 @@
+---
 apiVersion: enterprise.splunk.com/v3
 kind: Standalone
 metadata:
@@ -9,3 +10,34 @@ metadata:
     app.kubernetes.io/managed-by: ArgoCD
   finalizers:
   - enterprise.splunk.com/delete-pvc
+  serviceTemplate:
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: splunk-simple-splunk-standalone-service
+      annotations:
+        traefik.ingress.kubernetes.io/service.serversscheme: https
+      labels:
+        app.kubernetes.io/component: standalone
+        app.kubernetes.io/instance: splunk-simple-splunk-standalone
+        app.kubernetes.io/managed-by: splunk-operator
+        app.kubernetes.io/name: standalone
+        app.kubernetes.io/part-of: splunk-simple-splunk-standalone
+    spec:
+      ports:
+      - name: http-splunkweb
+        port: 8000
+        protocol: TCP
+        targetPort: 8000
+      - name: http-hec
+        port: 8088
+        protocol: TCP
+        targetPort: 8088
+      - name: https-splunkd
+        port: 8089
+        protocol: TCP
+        targetPort: 8089
+      - name: tcp-s2s
+        port: 9997
+        protocol: TCP
+        targetPort: 9997
