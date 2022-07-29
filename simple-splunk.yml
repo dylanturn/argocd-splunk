@@ -15,30 +15,15 @@ spec:
     apiVersion: v1
     kind: Service
     metadata:
-      name: splunk-simple-splunk-standalone-service
       annotations:
         traefik.ingress.kubernetes.io/service.serversscheme: https
-      labels:
-        app.kubernetes.io/component: standalone
-        app.kubernetes.io/instance: splunk-simple-splunk-standalone
-        app.kubernetes.io/managed-by: splunk-operator
-        app.kubernetes.io/name: standalone
-        app.kubernetes.io/part-of: splunk-simple-splunk-standalone
     spec:
       ports:
-      - name: http-splunk-web
+      - name: splunk-web
         port: 9000
         protocol: TCP
         targetPort: 8000
-      - name: http-splunk-hec
+      - name: splunk-hec
         port: 9088
         protocol: TCP
         targetPort: 8088
-#      - name: https-spd
-#        port: 8089
-#        protocol: TCP
-#        targetPort: 8089
-#      - name: tcp
-#        port: 9997
-#        protocol: TCP
-#        targetPort: 9997
