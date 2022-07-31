@@ -22,7 +22,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: splunk-simple-splunk-standalone-service
+            name: splunk-sean-standalone-service
             port:
               number: 8000
   tls:
@@ -54,7 +54,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: splunk-simple-splunk-standalone-service
+            name: splunk-sean-standalone-service
             port:
               number: 443
   tls:
