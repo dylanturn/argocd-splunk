@@ -15,6 +15,10 @@ spec:
   varVolumeStorageConfig:
     storageClassName: kube-rook
     storageCapacity: 100Gi
+  defaults: |-
+    splunk:
+      launch:
+        OPTIMISTIC_ABOUT_FILE_LOCKING: 1
   serviceTemplate:
     apiVersion: v1
     kind: Service
